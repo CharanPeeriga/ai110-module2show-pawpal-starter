@@ -7,10 +7,22 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+There were four classes chosen: PetTask, Pet, Owner, Scheduler. 
+
+PetTask will contain the task title, duration, priority, and preferred_time (optional). This class is responsible for denoting priority for each task.
+
+Pet will contain the name, species, age, and contain a list of PetTask objects. This class will have the ability to add and remove tasks
+
+Owner will contain name, available_minutes, and pet (object of Pet class). This class will denote availability and retrieve pet tasks.
+
+Scheduler will contain owner, schedule, and reasoning. This class is responsible for building a plan based on priority, availability of owner, and records the reasoning. 
+
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+The design was initially not as detailed, specifically the scheduler which was not as fleshed out. After Claude feedback, it was changed to be a more impactful task that essentially builds the plan with the objects from other classes.
 
 ---
 
