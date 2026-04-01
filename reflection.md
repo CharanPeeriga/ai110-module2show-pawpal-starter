@@ -33,10 +33,14 @@ The design was initially not as detailed, specifically the scheduler which was n
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
+The scheduler considers three constraints: task priority (high/medium/low), owner availability in minutes, and task frequency (daily, weekly, as_needed). Tasks are sorted first by priority descending, then by preferred time slot ascending, and are only included if they fit within the owner's remaining time. Priority was chosen as the primary constraint because skipping a high-priority task (e.g., medication) has more consequence than skipping a low-priority one regardless of timing preference.
+
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+The scheduler greedily picks tasks in priority order and skips any task that does not fit in the remaining time, even if a lower-priority task would fit. This means a long high-priority task can block several shorter lower-priority ones. This is reasonable because the goal is to ensure the most critical pet care tasks are always completed first, and leaving lower-priority tasks unscheduled is a safer outcome than fitting them in at the expense of missing something important.
 
 ---
 

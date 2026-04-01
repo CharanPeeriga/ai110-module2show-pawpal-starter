@@ -1,0 +1,59 @@
+{
+  "owner": {
+    "name": "Alex",
+    "available_minutes": 90
+  },
+  "pets": [
+    {
+      "name": "Buddy",
+      "species": "Dog",
+      "age": 3,
+      "tasks": [
+        {
+          "title": "Morning Walk",
+          "duration_minutes": 30,
+          "priority": "high",
+          "description": "Walk around the block",
+          "frequency": "daily",
+          "preferred_time": "morning"
+        },
+        {
+          "title": "Brush Teeth",
+          "duration_minutes": 10,
+          "priority": "medium",
+          "description": "Use dog toothbrush and paste",
+          "frequency": "daily"
+        }
+      ]
+    },
+    {
+      "name": "Luna",
+      "species": "Cat",
+      "age": 5,
+      "tasks": [
+        {
+          "title": "Clean Litter Box",
+          "duration_minutes": 5,
+          "priority": "high",
+          "description": "Scoop and replace litter",
+          "frequency": "daily"
+        },
+        {
+          "title": "Playtime",
+          "duration_minutes": 20,
+          "priority": "low",
+          "description": "Feather wand and toy mouse",
+          "frequency": "daily",
+          "preferred_time": "evening"
+        },
+        {
+          "title": "Flea Treatment",
+          "duration_minutes": 15,
+          "priority": "medium",
+          "description": "Apply monthly flea prevention",
+          "frequency": "weekly"
+        }
+      ]
+    }
+  ]
+}

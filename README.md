@@ -41,3 +41,9 @@ pip install -r requirements.txt
 5. Add tests to verify key behaviors.
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
+
+### Smart Scheduling
+- Frequency filtering — skips tasks already completed within their recurrence window (daily/weekly)
+- Priority + time-slot sorting — tasks sorted by priority descending, then morning → afternoon → evening
+- Conflict detection — warns on exact-time overlaps, slot crowding, and duplicate task titles
+- Auto next-occurrence on completion — completing a recurring task automatically queues the next instance
