@@ -47,3 +47,31 @@ pip install -r requirements.txt
 - Priority + time-slot sorting — tasks sorted by priority descending, then morning → afternoon → evening
 - Conflict detection — warns on exact-time overlaps, slot crowding, and duplicate task titles
 - Auto next-occurrence on completion — completing a recurring task automatically queues the next instance
+
+## Testing PawPal+
+
+### Running the test suite
+
+```bash
+python -m pytest
+```
+
+Run with verbose output to see each test by name:
+
+```bash
+python -m pytest -v
+```
+
+### What the tests cover
+
+- **Validation** — confirms that invalid priority values and malformed `start_time` strings raise errors immediately
+- **Sorting correctness** — verifies the schedule is ordered by priority descending (high → medium → low), with morning tasks appearing before afternoon tasks within the same priority
+- **Recurrence logic** — confirms that completing a `daily` or `weekly` task automatically adds a fresh next-occurrence to the pet, while `as_needed` tasks do not produce one
+- **Conflict detection** — verifies that two tasks pinned to the same clock time produce a `CONFLICT` warning in the reasoning log, and that tasks at different times do not
+- **Edge cases** — checks behavior when a pet has no tasks, when a task exceeds the available time budget and is skipped, and when a daily task already completed today is excluded from the plan
+
+### Confidence Level
+
+★★★★☆ (4/5)
+
+The core scheduling behaviors — sorting, recurrence, conflict detection, and time budgeting — are all verified and passing across 17 tests. One star is withheld because the Streamlit UI layer (`app.py`) is not yet covered by automated tests, so end-to-end user interactions remain untested.
